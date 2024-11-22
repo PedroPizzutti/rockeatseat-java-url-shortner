@@ -39,7 +39,7 @@ public class Main implements RequestHandler<Map<String, Object>, Map<String, Str
 
             PutObjectRequest request = PutObjectRequest.builder()
                     .bucket("url-shortener-pizzutti")
-                    .key(shortUrlCode)
+                    .key(shortUrlCode + ".json")
                     .build();
 
             s3Client.putObject(request, RequestBody.fromString(urlDataJson));
